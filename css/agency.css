@@ -45,6 +45,10 @@ a.active {
     color: #fec503;
 }
 
+.about{
+    background-color: #000e23;
+}
+
 h1,
 h2,
 h3,
@@ -126,7 +130,9 @@ fieldset[disabled] .btn-primary.active {
     font-size: 18px;
     font-weight: 700;
     color: #fff;
-    background-color: #fed136;
+    background-color: #f05f40;
+    margin-top: 15px;
+    margin-bottom: 60px;
 }
 
 .btn-xl:hover,
@@ -136,7 +142,7 @@ fieldset[disabled] .btn-primary.active {
 .open .dropdown-toggle.btn-xl {
     border-color: #f6bf01;
     color: #fff;
-    background-color: #fec503;
+    background-color: #000e23;
 }
 
 .btn-xl:active,
@@ -558,10 +564,13 @@ section h3.section-subheading {
 aside.clients img {
     margin: 50px auto;
 }
-
+section#contact .container {
+    margin-bottom: 4
+    0px;
+}
 section#contact {
-    background-color: #222;
-    background-image: url(../img/map-image.png);
+    background-color: #000e23;
+    /*cbackground-image: url(../img/map-image.png);*/
     background-position: center;
     background-repeat: no-repeat;
 }
