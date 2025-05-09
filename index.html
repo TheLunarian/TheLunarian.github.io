@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Haiku Vibes</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Your Haiku, Their Vibe</h1>
+    <p class="tagline">Tiny poems. Big personality.</p>
+
+    <form id="haikuForm">
+      <input type="text" id="theme" placeholder="Theme (e.g., rain, regret)" required>
+      <input type="text" id="voice" placeholder="Voice (e.g., Bob Ross, Snoop Dogg)" required>
+      <label><input type="checkbox" id="weirdToggle"> Make it weird</label>
+      <button type="submit">Generate Haiku</button>
+    </form>
+
+    <div id="result" class="hidden">
+      <h2>Your Haiku</h2>
+      <p id="haikuOutput">...</p>
+      <p id="haikuVoice"></p>
+      <button onclick="resetForm()">Try Another</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
