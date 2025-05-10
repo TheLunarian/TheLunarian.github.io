@@ -12,7 +12,7 @@ Be playful, evocative, and true to the haiku form.`;
 
   try {
     const response = await openai.chat.completions.create({
-      model: "gpt-4",
+      model: "gpt-3.5-turbo",
       messages: [
         { role: "system", content: "You are a poetic ghostwriter." },
         { role: "user", content: prompt }
