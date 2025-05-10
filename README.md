@@ -1,2 +1,2 @@
 # haiku-vibes
-Vibe Coding Test\
+Vibe Coding Test
