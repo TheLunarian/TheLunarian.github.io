@@ -24,7 +24,7 @@ Be playful, evocative, and true to the haiku form.`;
     const haiku = response.data.choices[0].message.content.trim();
     return {
       statusCode: 200,
-      body: JSON.stringify({ haiku }),
+      body: JSON.stringify({ haiku: result })
     };
   } catch (error) {
     console.error("OpenAI error:", error.message);
