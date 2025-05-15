@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Haiku Vibes</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Haiku Vibes</h1>
+    <p>Enter a movie or book and pick a voice. We'll turn it into a haiku.</p>
+
+    <label for="theme">Movie or Book Title:</label>
+    <input type="text" id="theme" placeholder="e.g., The Godfather or Romeo & Juliet" />
+
+    <label for="voice">Style or Voice:</label>
+    <input type="text" id="voice" placeholder="e.g., Jerry Seinfeld or Bob Ross" />
+
+    <button id="generate">Generate Haiku</button>
+
+    <pre id="result"></pre>
+  </div>
+
+  <script>
+    document.getElementById("generate").addEventListener("click", async () => {
+      const theme = document.getElementById("theme").value.trim();
+      const voice = document.getElementById("voice").value.trim();
+      const result = document.getElementById("result");
+      result.textContent = "Generating...";
+
+      if (!theme || !voice) {
+        result.textContent = "Please enter both a title and a voice.";
+        return;
+      }
+
+      try {
+        const response = await fetch("/.netlify/functions/generate-haiku", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ theme, voice })
+        });
+
+        const data = await response.json();
+        result.textContent = data.haiku || "No haiku returned.";
+      } catch (err) {
+        result.textContent = "Something went wrong. Try again later.";
+        console.error(err);
+      }
+    });
+  </script>
+</body>
+</html>
